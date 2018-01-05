@@ -57,6 +57,6 @@ app.use(indexRoutes);
 app.use("/camps", campsRoutes); // prefix "/camps" is added in front of every route
 app.use("/camps/:id/comments", commentsRoutes);
 
-app.listen(3000, function() {
+app.listen(process.env.PORT, process.env.ID, function() {
 	console.log("Working on port 3000!");
 });
