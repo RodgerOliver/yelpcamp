@@ -1,0 +1,44 @@
+.container {
+	margin: 2em 0;
+}
+
+.form {
+	margin: 25px auto;
+	width: 333px;
+}
+
+.text-center .card {
+	margin-bottom: 1.7em;
+}
+
+.card-footer .row {
+	margin-bottom: 1rem;
+}
+
+p.card-text {
+	margin: 0;
+}
+
+.card-body a.btn-warning {
+	color: white;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.delBtn {
+	border: 0 none;
+	background: 0 none;
+	color: red;
+}
+
+.delBtn:hover {
+	color: crimson;
+	text-decoration: underline;
+	cursor: pointer;
+}

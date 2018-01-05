@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<h1 class="text-center">Edit the Campground <%= camp.name %></h1>
+	<div class="form">
+		<form action="/camps/<%= camp._id %>?_method=PUT" method="POST">
+			<div class="form-group">
+				<input class="form-control" type="text" name="update[name]" value="<%= camp.name %>" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="url" name="update[image]" value="<%= camp.image %>" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="number" name="update[price]" value="<%= camp.price %>" min="0.01" step="0.01" required>
+			</div>
+			<div class="form-group">
+				<textarea class="form-control" name="update[description]" required><%= camp.description %></textarea>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-lg btn-success btn-block" type="submit">Update</button>
+			</div>
+		</form>
+		<div class="form-group clearfix mb-0">
+			<a class="left" href="/camps/<%= camp._id %>">Go Back</a>
+			<form class="right" action="/camps/<%= camp._id %>?_method=DELETE" method="POST">
+				<button class="delBtn">Delete</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/footer %>
