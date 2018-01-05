@@ -24,9 +24,9 @@ app.use(express.static(__dirname + "/public"));
 app.use(flash());
 
 // mongoose setup
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://Rodger:parkour@ds137957.mlab.com:37957/yelp_camp_rd", {useMongoClient: true});
-//mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
+mongoose.connect(url, {useMongoClient: true});
 
 // express session setup
 app.use(expressSession({
