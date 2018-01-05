@@ -25,7 +25,8 @@ app.use(flash());
 
 // mongoose setup
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
+mongoose.connect("mongodb://Rodger:parkour@ds137957.mlab.com:37957/yelp_camp_rd", {useMongoClient: true});
+//mongoose.connect("mongodb://localhost/yelp_camp", {useMongoClient: true});
 
 // express session setup
 app.use(expressSession({
@@ -57,6 +58,8 @@ app.use(indexRoutes);
 app.use("/camps", campsRoutes); // prefix "/camps" is added in front of every route
 app.use("/camps/:id/comments", commentsRoutes);
 
-app.listen(process.env.PORT, process.env.ID, function() {
-	console.log("Working on port 3000!");
+var server = app.listen(process.env.PORT, process.env.ID, function() {
+	var host = server.address().address;
+	var port = server.address().port;
+	console.log("Working on port " + port);
 });
